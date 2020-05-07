@@ -1,3 +1,12 @@
+# OSI 7 계층
+7. 응용계층 appication layer - HTTP
+6. 표현계층 presentation layer
+5. 세션계층 session layer
+4. 전송계층 transport layer - TCP
+3. 네트워크 계층 network layer - IP
+2. 데이터링크 계층 data link layer
+1. 물리 계층 physical layer
+
 # 3-way handshaking
 연결설정
 ## 과정
@@ -136,14 +145,32 @@ SSL이 적용된 HTTPS는 TCP 443번 포트를 사용
 TCP가 신뢰성 보장을 위해 사용하는 메커니즘 중 하나로서 송신측과 수신측의 속도 차이를 해결하기 위해 사용하는 메커니즘
 대표적으로 stop and wait ARQ, sliding window기법이 있음
 ## stop and wait ARQ
+수신측으로 부터 ACK를 받을때까지 대기 하다가 전송하는 기법
 ## sliding window
 ## window
 ## Go-Back-N ARQ
+오류가 난 지점부터 전송한 지점까지 모두 재전송 하는 기법
 ## Selective repeat ARQ
+오류가 난 부분만 재전송 하는 기법
+## adaptive ARQ 
+데이터 블록의 길이를 채널상태에 따라 동적으로 변경하는 방식, 전송효율이 제일 좋음
 
 # 혼잡제어(congestion control)
 역시 신뢰성을 보장하기 위해 사용되는 메커니즘 중 하나로 네트워크의 혼잡을 피하기 위해 송신자의 전송속도를 줄이기 위해 사용하는 메커니즘
 대표적으로 AIMD, Slow start, fast retransmit, fast recovery 기법이 있음
+
+# IPv4 IPv6
+## IPv4
+unicast, multicast, broadcast
+## IPv6
+unicast, multicast, anycast
+
+# 프로토콜
+- RIP : 거리벡터 방식을 채용하고 있는 대표적인 내부 라우팅 프로토콜
+- ICMP : 오류보고와 오류 수정기능, 호스트와 관리 질의를 위한 메커니즘이 없는 IP 프로토콜을 보완하기 위해 설계됨
+IP와 조합하여 통신중에 발생하는 오류의 처리와 전송 경로 변경 등을 위한 제어 메세지를 관리하는 역할을 함
+- ARP : 호스트의 IP주소(논리주소)를 호스트와 연결된 네트워크 접속장치의 물리적 주소(MAC Address)로 변환함
+- HTTP : HTTP는 클라이언트와 서버 사이에 이루어지는 요청/응답(request/response) 프로토콜이다.
 
 # java에서 TCP와 UDP 소켓 생성방법
 
