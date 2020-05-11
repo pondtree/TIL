@@ -5,3 +5,4 @@
 ## Markdown 사용법
 ---------------------
 window + R
+cmd
